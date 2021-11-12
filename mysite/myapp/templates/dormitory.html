@@ -8,7 +8,7 @@
 {% if items %}
     <ul>
         {% for item in items %}
-            <li><a href="{% url 'myapp:student_details' item.id %}"> {{ item.name }}</a></li>
+            <li><a href="{% url 'myapp:dormitory_details' item.id %}"> {{ item.name }}</a></li>
         {% endfor %}
     </ul>
 {% else %}
