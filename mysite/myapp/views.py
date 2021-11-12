@@ -10,7 +10,7 @@ from django.views import generic
 
 class IndexView(generic.ListView):
     template_name = "students.html"
-    context_object_name = "students"
+    context_object_name = "items"
 
     def get_queryset(self):
         return Student.objects.all()
@@ -19,6 +19,19 @@ class IndexView(generic.ListView):
 class DetailView(generic.DetailView):
     model = Student
     template_name = "student_details.html"
+
+
+class DormitoryView(generic.ListView):
+    template_name = "dormitory.html"
+    context_object_name = "items"
+
+    def get_queryset(self):
+        return Dormitory.objects.all()
+
+
+class DormitoryDetailView(generic.DetailView):
+    model = Dormitory
+    template_name = "dormitory_details.html"
 
 
 def hello(request):
