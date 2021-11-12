@@ -16,23 +16,20 @@ class IndexView(generic.ListView):
         return Student.objects.all()
 
 
+class DetailView(generic.DetailView):
+    model = Student
+    template_name = "student_details.html"
+
+# def student_details(request, student_id):
+#     try:
+#         student_info = Student.objects.get(pk=student_id)
+#     except Student.DoesNotExist:
+#         raise Http404("Student does not exist")
+#     return render(request, "student_details.html", {"student": student_info})
+
+
 def hello(request):
     return render(request, "hello.html")
-
-
-# def student(request):
-#     students = Student.objects.all()
-#     # output = ", ".join([info.name for info in students])
-#     context = {"students": students}
-#     return render(request, "students.html", context)
-
-
-def student_details(request, student_id):
-    try:
-        student_info = Student.objects.get(pk=student_id)
-    except Student.DoesNotExist:
-        raise Http404("Student does not exist")
-    return render(request, "student_details.html", {"student": student_info})
 
 
 def grades(request):

@@ -12,5 +12,5 @@ urlpatterns = [
     path('grades', views.grades, name='grades'),
     path('dormitory', views.dormitory, name='dormitory'),
     path('subject', views.subject, name='subject'),
-    path('<int:student_id>/student', views.student_details, name='student_details')
+    path('<int:pk>/student', views.DetailView.as_view(), name='student_details')
 ]
