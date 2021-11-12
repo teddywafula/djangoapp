@@ -20,13 +20,6 @@ class DetailView(generic.DetailView):
     model = Student
     template_name = "student_details.html"
 
-# def student_details(request, student_id):
-#     try:
-#         student_info = Student.objects.get(pk=student_id)
-#     except Student.DoesNotExist:
-#         raise Http404("Student does not exist")
-#     return render(request, "student_details.html", {"student": student_info})
-
 
 def hello(request):
     return render(request, "hello.html")
